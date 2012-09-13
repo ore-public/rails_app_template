@@ -3,8 +3,10 @@ gem 'capistrano'
 gem 'capistrano_colors'
 gem 'capistrano-ext'
 gem 'rvm-capistrano'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 gem 'kaminari'
+gem 'rails_config'
+gem 'active_decorator'
 
 gem_group :assets do
   gem 'coffeebeans'

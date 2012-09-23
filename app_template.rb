@@ -40,7 +40,7 @@ generate "rspec:install"
 generate 'rails_config:install'
 
 #cucumber
-generate "cucumber:install ja capybara"
+generate "cucumber:install"
 #insert_into_file "features/support/env.rb", "Capybara.javascript_driver = :webkit"
 
 #twitter bootstrap generareとサンプルビュー作成

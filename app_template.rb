@@ -22,6 +22,7 @@ gem_group :test do
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rr'
+  gem 'spork'
 end
 
 #comment_lines 'Gemfile', "gem 'sqlite3'"
@@ -45,6 +46,9 @@ comment_lines 'spec/spec_helper.rb', 'config.fixture_path'
 #      g.fixture_replacement :factory_girl, dir: 'spec/factories'
 #    end
 #end
+
+#spork
+run "bundle exec spork --bootstrap"
 
 #rails_config
 generate 'rails_config:install'

@@ -25,6 +25,15 @@ gem_group :test do
   gem 'spork'
 end
 
+gem_group :development do
+  gem 'growl'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-cucumber'
+  gem 'rb-fsevent', :require => false
+end
+
 #comment_lines 'Gemfile', "gem 'sqlite3'"
 uncomment_lines 'Gemfile', "gem 'therubyracer'"
 uncomment_lines 'Gemfile', "gem 'unicorn'"
@@ -49,6 +58,14 @@ comment_lines 'spec/spec_helper.rb', 'config.fixture_path'
 
 #spork
 run "bundle exec spork --bootstrap"
+# spec_helper.rbを編集して、Spork.preloadのブロックの中に設定を移す
+# http://qiita.com/items/7b98fb8ec493ff801029  を参考
+
+#guard
+run "bundle exec guard init spork"
+run "bundle exec guard init rspec"
+# Guardfileを編集
+# http://qiita.com/items/7b98fb8ec493ff801029  を参考
 
 #rails_config
 generate 'rails_config:install'

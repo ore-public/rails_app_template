@@ -37,6 +37,14 @@ run "bundle install"
 #rspec
 generate "rspec:install"
 uncomment_lines 'spec/spec_helper.rb', "config.mock_with :rr"
+comment_lines 'spec/spec_helper.rb', 'config.fixture_path'
+#insert_into_file 'spec/spec_helper.rb', "require 'factory_girl'"
+#insert_into_file 'config/application.rb' do
+#    config.generators do |g|
+#      g.test_framework :rspec, fixture: true, view_specs: false
+#      g.fixture_replacement :factory_girl, dir: 'spec/factories'
+#    end
+#end
 
 #rails_config
 generate 'rails_config:install'

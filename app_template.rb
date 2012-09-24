@@ -21,6 +21,7 @@ gem_group :test do
   gem 'cucumber-rails'
   gem 'capybara-webkit'
   gem 'database_cleaner'
+  gem 'rr'
 end
 
 #comment_lines 'Gemfile', "gem 'sqlite3'"
@@ -35,6 +36,7 @@ run "bundle install"
 
 #rspec
 generate "rspec:install"
+uncomment_lines 'spec/spec_helper.rb', "config.mock_with :rr"
 
 #rails_config
 generate 'rails_config:install'

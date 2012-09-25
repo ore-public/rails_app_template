@@ -18,7 +18,7 @@ gem_group :test do
   gem 'headless'
   gem 'factory_girl_rails'
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem "cucumber-rails", :require => false
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rr'

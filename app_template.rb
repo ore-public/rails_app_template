@@ -18,7 +18,7 @@ gem_group :test do
   gem 'headless'
   gem 'factory_girl_rails'
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem "cucumber-rails", :require => false
   gem 'capybara-webkit'
   gem 'database_cleaner'
   gem 'rr'
@@ -64,8 +64,10 @@ run "bundle exec spork --bootstrap"
 #guard
 run "bundle exec guard init spork"
 run "bundle exec guard init rspec"
+run "bundle exec guard init cucumber"
 # Guardfileを編集
 # http://qiita.com/items/7b98fb8ec493ff801029  を参考
+
 
 #rails_config
 generate 'rails_config:install'

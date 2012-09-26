@@ -14,7 +14,7 @@ end
 
 gem_group :test do
   gem 'rspec'
-  gem 'rspec-rails'
+  gem 'rspec-rails', :group => :development
   gem 'headless'
   gem 'factory_girl_rails'
   gem 'cucumber'
@@ -90,6 +90,7 @@ end
 
 #capistranoのコンフィグレーション実行
 capify!
+uncomment_lines 'Capfile', "load 'deploy/assets'"
 
 #リポジトリ作成と、初回コミット
 git :init
